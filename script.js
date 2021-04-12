@@ -41,7 +41,7 @@ function showTemp(response){
   (humid).innerHTML = (`HUMIDITY: ${humidElement} %`);
 
   let pressElement= `${response.data.main.pressure}`;
-  (pressure).innerHTML = (`PRESSURE: ${pressElement} Pa`);
+  (pressure).innerHTML = (`PRESSURE: ${pressElement} hPa`);
 
   
 
@@ -80,5 +80,3 @@ currentButton.addEventListener ("click", currentLoc);
 
 let form = document.querySelector("#searching");
 form.addEventListener("submit", searchCity);
-
-
