@@ -72,8 +72,18 @@ i {
   margin: auto;
   font-size: 15px;
   font-family: "Oswald", sans-serif;
-  top: -120px;
+  top: -220px;
   right: -150px;
+}
+#greet {
+  text-align: center;
+  margin-right: 20px;
+  margin-top: 5px;
+  font-size: 22px;
+  padding: 0;
+  font-family: "Oswald", sans-serif;
+  padding-bottom: 20px;
+  text-decoration: underline;
 }
 #humid {
   text-align: center;
@@ -177,5 +187,12 @@ i {
   position: relative;
   font-size: 20px;
   padding: 10px;
+  top: -30px;
+}
+#icon {
+  width: 130px;
+  height: 130px;
+  position: relative;
+  left: -25px;
   top: -30px;
 }

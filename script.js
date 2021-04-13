@@ -3,9 +3,14 @@ function greet() {
   let now = new Date();
   let hour = now.getHours();
   if (hour >18 && hour < 4){
-  alert (`Good evening!`);
+  let greeting= document.querySelector("#greet");
+  greeting.innerHTML= `GOOD EVENING!`
+  }if (hour <= 12){
+  let greeting= document.querySelector("#greet");
+  greeting.innerHTML= `GOOD AFTERNOON!`
   }else{
-  alert (`Good morning!`);
+  let greeting= document.querySelector("#greet");
+  greeting.innerHTML= `GOOD MORNING!`
   }
   }
   greet();
@@ -38,7 +43,7 @@ let month = months[now.getMonth()];
 let today = now.getDate();
 let formatDate = `${day}, ${month} ${today} , ${hour}:${minutes}`;
 let p=document.querySelector("p");
-p.innerHTML= formatDate;
+p.innerHTML= `Last updated: <br /> ${formatDate}` ;
 
 
 function showTemp(response){
@@ -59,7 +64,11 @@ function showTemp(response){
   let pressElement= `${response.data.main.pressure}`;
   (pressure).innerHTML = (`PRESSURE: ${pressElement} hPa`);
 
-  
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute("src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+
 
    
   
@@ -74,13 +83,11 @@ function searchCity(event) {
 }
 
 
+
 function locateMe(position){
   let latitude= position.coords.latitude;
   let longitude= position.coords.longitude;
-  
   let apiSecond= `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=1591a667f6fc96d6e0e8c80981573a26`;
-
-
   axios.get(apiSecond).then(showTemp);
   
 }
@@ -96,4 +103,3 @@ currentButton.addEventListener ("click", currentLoc);
 
 let form = document.querySelector("#searching");
 form.addEventListener("submit", searchCity);
-
