@@ -1,9 +1,25 @@
 
+function greet() {
+  let now = new Date();
+  let hour = now.getHours();
+  if (hour >18 && hour < 4){
+  alert (`Good evening!`);
+  }else{
+  alert (`Good morning!`);
+  }
+  }
+  greet();
+
+  
+
 let now = new Date();
 let days = [`Sunday`, `Monday`, `Tuesday`, `Wednesday`, `Thursday`, `Friday`, `Saturday`];
 let day = days[now.getDay()];
+
 let hour= now.getHours();
+hour= ("0" + hour).slice (-2);
 let minutes= now.getMinutes();
+minutes= ("0"+ minutes).slice(-2);
 let months = [
   `Jan`,
   `Feb`,
@@ -29,7 +45,7 @@ function showTemp(response){
   let temperature= Math.round(response.data.main.temp);
 
   let tempElement= document.querySelector("#temperature");
-  tempElement.innerHTML= `${temperature} °C`;
+  tempElement.innerHTML= `${temperature} `;
 
   let locatedCity = `${response.data.name}`;
   (city2).innerHTML= (`${locatedCity}`).toUpperCase();
@@ -80,3 +96,4 @@ currentButton.addEventListener ("click", currentLoc);
 
 let form = document.querySelector("#searching");
 form.addEventListener("submit", searchCity);
+

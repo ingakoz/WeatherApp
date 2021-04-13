@@ -164,3 +164,18 @@ i {
   top: -150;
   margin-bottom: 0;
 }
+.greeting {
+  text-align: center;
+  margin-right: 20px;
+  margin-top: 5px;
+  padding-right: 40px;
+  font-size: 15px;
+  font-family: "Oswald", sans-serif;
+  padding: 0;
+}
+.tempDigits {
+  position: relative;
+  font-size: 20px;
+  padding: 10px;
+  top: -30px;
+}
