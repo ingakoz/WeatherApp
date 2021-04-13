@@ -24,8 +24,10 @@ p {
   height: 600px;
   padding: 20px;
   opacity: 0.8;
+  border: 5px solid rgb(23, 74, 90);
+  box-shadow: 4px 4px 10px rgb(53, 122, 143);
   border-radius: 15px;
-  background-image: url("https://hcbookfinder.com/wp-content/uploads/2016/06/Clouds-Background-HD.jpg");
+  background-image: url("https://i.pinimg.com/originals/dc/5d/0a/dc5d0a22d32498ca5677ac2946c0b4a2.jpg");
 }
 
 .sizeimage {
