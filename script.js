@@ -1,21 +1,5 @@
 
-function greet() {
-  let now = new Date();
-  let hour = now.getHours();
-  if (hour >18 && hour < 4){
-  let greeting= document.querySelector("#greet");
-  greeting.innerHTML= `GOOD EVENING!`
-  }if (hour <= 12){
-  let greeting= document.querySelector("#greet");
-  greeting.innerHTML= `GOOD AFTERNOON!`
-  }else{
-  let greeting= document.querySelector("#greet");
-  greeting.innerHTML= `GOOD MORNING!`
-  }
-  }
-  greet();
 
-  
 
 let now = new Date();
 let days = [`Sunday`, `Monday`, `Tuesday`, `Wednesday`, `Thursday`, `Friday`, `Saturday`];
