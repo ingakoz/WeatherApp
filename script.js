@@ -100,6 +100,9 @@ function showTemp(response){
   let pressElement= `${response.data.main.pressure}`;
   (pressure).innerHTML = (`PRESSURE: ${pressElement} hPa`);
 
+  let windElement = Math.round(response.data.wind.speed);
+  (wind).innerHTML = (`WIND: ${windElement} km/h`);
+
   let iconElement = document.querySelector("#icon");
   iconElement.setAttribute("src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
