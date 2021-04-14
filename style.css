@@ -202,3 +202,7 @@ i {
 .forecast-temperature-min {
   opacity: 0.6;
 }
+.finish {
+  position: relative;
+  padding: 40px;
+}
