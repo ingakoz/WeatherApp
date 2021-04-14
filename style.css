@@ -60,13 +60,7 @@ p {
   text-align: center;
   margin: 0 20px;
 }
-.border1 {
-  border: 1px solid whitesmoke;
-  border-radius: 10px;
-  background: whitesmoke;
-  color: black;
-  text-align: center;
-}
+
 i {
   color: rgb(3, 59, 182);
 }
@@ -76,40 +70,40 @@ i {
   font-family: "Oswald", sans-serif;
   top: -220px;
   right: -150px;
+  right: 100px;
 }
-#greet {
-  text-align: center;
-  margin-right: 20px;
-  margin-top: 5px;
-  font-size: 22px;
-  padding: 0;
-  font-family: "Oswald", sans-serif;
-  padding-bottom: 20px;
-  text-decoration: underline;
-}
+
 #humid {
   text-align: center;
   margin-right: 20px;
+  margin-left: 500px;
   margin-top: 5px;
   font-size: 15px;
   padding: 0;
   font-family: "Oswald", sans-serif;
+  width: 200px;
 }
 #description {
   text-align: center;
   margin-right: 20px;
+  margin-left: 500px;
+
   margin-top: 5px;
   padding: 0;
   font-size: 15px;
+  width: 200px;
 }
 #pressure {
   text-align: center;
   margin-right: 20px;
+  margin-left: 500px;
+
   margin-top: 5px;
   padding-right: 40px;
   font-size: 15px;
   font-family: "Oswald", sans-serif;
   padding: 0;
+  width: 200px;
 }
 #temperature {
   margin: 0 auto;
@@ -119,19 +113,20 @@ i {
   font-weight: bolder;
   font-family: "Oswald", sans-serif;
   right: -20px;
+  top: -20px;
 }
 #cities {
-  width: 300px;
+  width: 518px;
   height: 35px;
   border-radius: 10px;
-  border-color: whitesmoke;
+  border-color: black;
   margin-left: 20px;
 }
 .containerhour {
   font-size: 15px;
   font-family: "Oswald", sans-serif;
   text-align: center;
-  border: 2px solid whitesmoke;
+  border: 2px solid black;
   border-radius: 10px;
   background-color: whitesmoke;
   padding: 10px;
@@ -170,31 +165,32 @@ i {
   width: 220px;
   border-radius: 10px;
   padding: 10px;
+  border: 2px solid black;
 }
 .col-6 {
   left: -300px;
   top: -150;
   margin-bottom: 0;
 }
-.greeting {
-  text-align: center;
-  margin-right: 20px;
-  margin-top: 5px;
-  padding-right: 40px;
-  font-size: 15px;
-  font-family: "Oswald", sans-serif;
-  padding: 0;
-}
+
 .tempDigits {
   position: relative;
-  font-size: 20px;
+  font-size: 22px;
   padding: 10px;
-  top: -30px;
+  top: -20px;
 }
 #icon {
   width: 130px;
   height: 130px;
   position: relative;
-  left: -25px;
+  left: -15px;
   top: -30px;
+  margin-left: 0;
+}
+.active {
+  color: black;
+  cursor: default;
+}
+.active:hover {
+  text-decoration: none;
 }
