@@ -29,31 +29,40 @@ let formatDate = `${day}, ${month} ${today} , ${hour}:${minutes}`;
 let p=document.querySelector("p");
 p.innerHTML= `Last updated: <br /> ${formatDate}` ;
 
+function formDate (timestamp){
+  let date = new Date (timestamp * 1000);
+  let day = date.getDay();
+  let days= ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
+  return days[day];
 
-function displayForecast(){
+}
+
+function displayForecast(response){
+  let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
 
   let forecastHTML = `<div class="row">`;
-  let weekDays = ["Thu", "Fri", "Sat","Sun","Mon","Tue"];
-  weekDays.forEach(function(day){
+  forecast.forEach(function(forecastDay , index){
+    if (index < 6){
   forecastHTML = forecastHTML + 
             `
             <div class="col-2">
                 <strong>
-                <div class="forecast-date">${day} </strong> </div>
-                <img src="http://openweathermap.org/img/wn/50d@2x.png" 
+                <div class="forecast-date">${formDate(forecastDay.dt)} </strong> </div>
+                <img src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png" 
                 alt="" width="36"/>
                  <br />
                 <div class="forecast-temperatures">
                     <span class="forecast-temperature-max">
-                        20
+                        ${Math.round(forecastDay.temp.max)}°
                     </span>
                     <span class="forecast-temperature-min">
-                        18
+                        ${Math.round(forecastDay.temp.min)}°
                     </span>
                 </div>
             </div>
         `;
+        }
   })
         forecastHTML = forecastHTML + `</div>`;
 
@@ -66,7 +75,10 @@ function displayForecast(){
 
 
 
-
+function getForecast(coordinates){
+  let api2= `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=1591a667f6fc96d6e0e8c80981573a26&units=metric`;
+  axios.get(api2).then(displayForecast);
+}
 
 
 function showTemp(response){
@@ -93,10 +105,10 @@ function showTemp(response){
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
 
-  displayForecast();
+  getForecast(response.data.coord);
+
 
   celTemperature = response.data.main.temp;
-   
   
 }
 
