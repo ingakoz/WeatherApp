@@ -30,6 +30,45 @@ let p=document.querySelector("p");
 p.innerHTML= `Last updated: <br /> ${formatDate}` ;
 
 
+function displayForecast(){
+  let forecastElement = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class="row">`;
+  let weekDays = ["Thu", "Fri", "Sat","Sun","Mon","Tue"];
+  weekDays.forEach(function(day){
+  forecastHTML = forecastHTML + 
+            `
+            <div class="col-2">
+                <strong>
+                <div class="forecast-date">${day} </strong> </div>
+                <img src="http://openweathermap.org/img/wn/50d@2x.png" 
+                alt="" width="36"/>
+                 <br />
+                <div class="forecast-temperatures">
+                    <span class="forecast-temperature-max">
+                        20
+                    </span>
+                    <span class="forecast-temperature-min">
+                        18
+                    </span>
+                </div>
+            </div>
+        `;
+  })
+        forecastHTML = forecastHTML + `</div>`;
+
+
+        forecastElement.innerHTML = forecastHTML;
+
+
+
+}
+
+
+
+
+
+
 function showTemp(response){
   let temperature= Math.round(response.data.main.temp);
 
@@ -53,6 +92,8 @@ function showTemp(response){
   iconElement.setAttribute("src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
+
+  displayForecast();
 
   celTemperature = response.data.main.temp;
    

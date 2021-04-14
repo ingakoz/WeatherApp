@@ -149,14 +149,7 @@ i {
   text-align: left;
   right: -45px;
 }
-.finish {
-  text-align: center;
-  margin: 0 auto;
-  font-size: 12px;
-  font-weight: lighter;
-  background-color: white;
-  font-family: "Oswald", sans-serif;
-}
+
 .container {
   margin-top: 15px;
 }
