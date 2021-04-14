@@ -39,6 +39,7 @@ function showTemp(response){
   let locatedCity = `${response.data.name}`;
   (city2).innerHTML= (`${locatedCity}`).toUpperCase();
 
+
   let describeEl=`${response.data.weather[0].main}`;
   (description).innerHTML = (`SKY: ${describeEl}`);
 
