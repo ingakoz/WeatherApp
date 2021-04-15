@@ -102,19 +102,20 @@ function showTemp(response){
 
   getForecast(response.data.coord);
 
-
   celTemperature = response.data.main.temp;
-  
 }
 
 function searchCity(event) {
   event.preventDefault();
   let input = document.querySelector("#cities");
   (city2).innerHTML= (`${input.value}`).toUpperCase();
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${input.value}&appid=1591a667f6fc96d6e0e8c80981573a26&units=metric`;
+  search(input.value);
+}
+function search(city) { 
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=1591a667f6fc96d6e0e8c80981573a26&units=metric`;
   axios.get(apiUrl).then(showTemp);
 }
-
+ 
 
 function locateMe(position){
   let latitude= position.coords.latitude;
@@ -130,6 +131,7 @@ navigator.geolocation.getCurrentPosition(locateMe);
 
 let currentButton=document.querySelector("#buttonLocation");
 currentButton.addEventListener ("click", currentLoc);
+
 
 function showFahrTemp(event){
   event.preventDefault();
@@ -152,7 +154,7 @@ function showCelTemp(event){
 let celTemperature = null;
 
 let form = document.querySelector("#searching");
-form.addEventListener("submit", searchCity);
+form.addEventListener("submit", search);
 
 let fahrenheitLink = document.querySelector("#fahr-link");
 fahrenheitLink.addEventListener("click", showFahrTemp);
@@ -160,3 +162,4 @@ fahrenheitLink.addEventListener("click", showFahrTemp);
 let celLink= document.querySelector("#cel-link");
 celLink.addEventListener("click", showCelTemp);
 
+search ("New York");
