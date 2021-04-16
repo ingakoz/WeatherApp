@@ -158,7 +158,7 @@ function showCelTemp(event){
 let celTemperature = null;
 
 let form = document.querySelector("#searching");
-form.addEventListener("submit", search);
+form.addEventListener("submit", searchCity);
 
 
 let fahrenheitLink = document.querySelector("#fahr-link");
