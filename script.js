@@ -47,7 +47,7 @@ function displayForecast(response){
                 <strong>
                 <div class="forecast-date">${formDate(forecastDay.dt)} </strong> </div>
                 <img src="http://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png" 
-                alt="" width="36"/>
+                alt="" width="40"/>
                  <br />
                 <div class="forecast-temperatures">
                     <span class="forecast-temperature-max">
