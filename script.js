@@ -110,15 +110,15 @@ function searchCity(event) {
   let input = document.querySelector("#cities");
   (city2).innerHTML= (`${input.value}`).toUpperCase();
 
-  search(input.value);
+  searchbutton(input.value);
 }
 
 
-function search(city) { 
+function searchbutton(city) { 
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=1591a667f6fc96d6e0e8c80981573a26&units=metric`;
   axios.get(apiUrl).then(showTemp);
 }
-search ("New York"); 
+searchbutton ("New York"); 
 
 function locateMe(position){
   let latitude= position.coords.latitude;
