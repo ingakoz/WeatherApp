@@ -64,9 +64,6 @@ p {
   margin: 0 20px;
 }
 
-i {
-  color: rgb(3, 59, 182);
-}
 .one {
   margin: auto;
   font-size: 15px;
@@ -126,6 +123,8 @@ i {
   height: 35px;
   border-radius: 10px;
   border-color: rgb(184, 184, 184);
+  background-color: rgb(235, 235, 235);
+
   margin-left: 20px;
 }
 .containerhour {
